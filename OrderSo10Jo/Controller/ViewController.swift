@@ -10,10 +10,11 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var orderTableView: UITableView!
-  @IBOutlet weak var TitleView: UIView!
   
-  var orderList = [Order(name: "아메리카노", price: 4500, count: 2),
-                   Order(name: "카페라떼", price: 5000, count: 1)]
+  var orderList = OrderTableViewCell.orderList
+
+//  static var orderList = [Order(name: "아메리카노", price: 4500, count: 2),
+//                   Order(name: "카페라떼", price: 5000, count: 1)]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,7 +25,9 @@ class ViewController: UIViewController {
   func setOrderTableView() {
     orderTableView.delegate = self
     orderTableView.dataSource = self
-    orderTableView.register(OrderTableViewCell.self, forCellReuseIdentifier: "OrderCell")
+    
+    let nib = UINib(nibName: "OrderTableViewCell", bundle: nil)
+    orderTableView.register(nib, forCellReuseIdentifier: "OrderCell")
     
     view.addSubview(orderTableView)
   }
@@ -38,7 +41,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = orderTableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath)
+    let cell = orderTableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderTableViewCell
+    
+    cell.setOrderTableViewCell(indexPath: indexPath)
+    //cell.menuName?.text = orderList[indexPath.row].name
     
     return cell
   }

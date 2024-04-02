@@ -78,7 +78,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="TitleView" destination="vhB-Np-MJP" id="y9x-IV-7GY"/>
                         <outlet property="orderTableView" destination="P0L-FQ-eXF" id="67k-6o-OlW"/>
                     </connections>
                 </viewController>

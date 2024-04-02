@@ -9,7 +9,10 @@ import UIKit
 
 class OrderTableViewCell: UITableViewCell {
   
+  
   @IBOutlet weak var menuName: UILabel!
+  static var orderList = [Order(name: "아메리카노", price: 4500, count: 2),
+                   Order(name: "카페라떼", price: 5000, count: 1)]
   
   override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +24,9 @@ class OrderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
+  func setOrderTableViewCell(indexPath: IndexPath) {
+    menuName?.text = OrderTableViewCell.orderList[indexPath.row].name
+  }
     
 }
