@@ -8,8 +8,10 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
+  
+  @IBOutlet weak var menuName: UILabel!
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
