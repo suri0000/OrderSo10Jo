@@ -12,7 +12,7 @@ class OrderTableViewCell: UITableViewCell {
   
   @IBOutlet weak var menuName: UILabel!
   static var orderList = [Order(name: "아메리카노", price: 4500, count: 2),
-                   Order(name: "카페라떼", price: 5000, count: 1)]
+                   Order(name: "복자 요거트 프라페", price: 5000, count: 1)]
   
   override func awakeFromNib() {
         super.awakeFromNib()
