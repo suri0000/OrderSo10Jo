@@ -13,6 +13,8 @@
 ### branch 이름
 - 종류/#브랜치번호(이슈번호)-기능내용
 - 예시) feat/#1-orderlist
+- 띄어쓰기가 필요한 경우는 -(hypen)으로 표시해주세요.
+- 예시) feat/#1-orderList-Layout
 
 
 ### commit
