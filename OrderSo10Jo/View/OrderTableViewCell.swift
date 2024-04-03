@@ -9,6 +9,7 @@ import UIKit
 
 protocol OrderTableViewCellDelegate {
   func addOrderQuantity(for cell: OrderTableViewCell)
+  func subtractOrderQuantity(for cell: OrderTableViewCell)
 }
 
 class OrderTableViewCell: UITableViewCell {
@@ -19,10 +20,10 @@ class OrderTableViewCell: UITableViewCell {
   @IBOutlet weak var cancelButton: UIButton!
   @IBOutlet weak var orderQuantity: UILabel!
   
+  static let cellID = "OrderCell"
   static var orders = [Order(name: "아메리카노", price: 4500, count: 2),
                        Order(name: "복자 요거트 프라페", price: 5000, count: 1)]
   var orderList = OrderTableViewCell.orders
-  
   var delegate: OrderTableViewCellDelegate?
   
   override func awakeFromNib() {
@@ -36,14 +37,23 @@ class OrderTableViewCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
-  
   @IBAction func plusButtonTapped(_ sender: Any) {
     delegate?.addOrderQuantity(for: self)
+  }
+  
+  @IBAction func minusButtonTapped(_ sender: Any) {
+    delegate?.subtractOrderQuantity(for: self)
   }
   
   func setOrderTableViewCell(indexPath: IndexPath) {
     menuName?.text = OrderTableViewCell.orders[indexPath.row].name
     orderQuantity.text = String(orderList[indexPath.row].count)
+    
+    if orderList[indexPath.row].count <= 1 {
+      minusButton.isEnabled = false
+    } else {
+      minusButton.isEnabled = true
+    }
   }
   
 }

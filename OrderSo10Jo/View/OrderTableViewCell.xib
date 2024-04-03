@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gm-Lz-XUM">
-                        <rect key="frame" x="35" y="12" width="41.333333333333343" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="35" y="12" width="44.333333333333343" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBW-uN-CLH">
-                        <rect key="frame" x="211" y="14.333333333333336" width="16" height="16"/>
+                        <rect key="frame" x="207" y="14.333333333333336" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="LDj-lQ-zw4"/>
                             <constraint firstAttribute="height" constant="16" id="y6Y-6R-Xbj"/>
@@ -40,9 +40,12 @@
                             <color key="baseForegroundColor" systemColor="labelColor"/>
                             <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="minusButtonTapped:" destination="-1" eventType="touchUpInside" id="efH-Yt-369"/>
+                        </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-SZ-YL8">
-                        <rect key="frame" x="248" y="12" width="21" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-SZ-YL8">
+                        <rect key="frame" x="244" y="12" width="25" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -86,6 +89,7 @@
                     <constraint firstAttribute="trailing" secondItem="17T-1t-DXU" secondAttribute="trailing" constant="55" id="5SZ-Ik-nz4"/>
                     <constraint firstItem="ZkB-SZ-YL8" firstAttribute="leading" secondItem="sBW-uN-CLH" secondAttribute="trailing" constant="21" id="Dbz-hL-32g"/>
                     <constraint firstItem="0Gm-Lz-XUM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NHz-OQ-nDh"/>
+                    <constraint firstAttribute="trailing" secondItem="sBW-uN-CLH" secondAttribute="trailing" constant="170" id="P5C-v5-9ZG"/>
                     <constraint firstItem="XLd-fb-PQV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ROy-fu-1gY"/>
                     <constraint firstItem="XLd-fb-PQV" firstAttribute="leading" secondItem="ZkB-SZ-YL8" secondAttribute="trailing" constant="21" id="Vkx-88-nro"/>
                     <constraint firstItem="17T-1t-DXU" firstAttribute="leading" secondItem="XLd-fb-PQV" secondAttribute="trailing" constant="20" id="bFz-b6-Dmh"/>

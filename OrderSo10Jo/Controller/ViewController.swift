@@ -24,11 +24,10 @@ class ViewController: UIViewController {
     orderTableView.dataSource = self
     
     let nib = UINib(nibName: "OrderTableViewCell", bundle: nil)
-    orderTableView.register(nib, forCellReuseIdentifier: "OrderCell")
+    orderTableView.register(nib, forCellReuseIdentifier: OrderTableViewCell.cellID)
     
     view.addSubview(orderTableView)
-  }
-  
+  }  
   
 }
 
@@ -39,7 +38,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = orderTableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderTableViewCell
+    let cell = orderTableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.cellID, for: indexPath) as! OrderTableViewCell
     
     cell.setOrderTableViewCell(indexPath: indexPath)
     cell.delegate = self
@@ -55,12 +54,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: OrderTableViewCellDelegate {
   
+  func subtractOrderQuantity(for cell: OrderTableViewCell) {
+    guard let indexPath = orderTableView.indexPath(for: cell) else { return }
+    
+    orderList[indexPath.row].count -= 1
+    cell.orderQuantity.text = String(orderList[indexPath.row].count)
+    if orderList[indexPath.row].count <= 1 {
+      cell.minusButton.isEnabled = false
+    }
+  }
+  
   func addOrderQuantity(for cell: OrderTableViewCell) {
     guard let indexPath = orderTableView.indexPath(for: cell) else { return }
     
     orderList[indexPath.row].count += 1
     cell.orderQuantity.text = String(orderList[indexPath.row].count)
-    
+    cell.minusButton.isEnabled = true
   }
   
 }
