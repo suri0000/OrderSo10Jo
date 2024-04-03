@@ -7,9 +7,10 @@
 
 import UIKit
 
-protocol OrderTableViewCellDelegate {
+protocol OrderTableViewCellDelegate: AnyObject {
   func addOrderQuantity(for cell: OrderTableViewCell)
   func subtractOrderQuantity(for cell: OrderTableViewCell)
+  func deleteMenu(for cell: OrderTableViewCell)
 }
 
 class OrderTableViewCell: UITableViewCell {
@@ -24,7 +25,7 @@ class OrderTableViewCell: UITableViewCell {
   static var orders = [Order(name: "아메리카노", price: 4500, count: 2),
                        Order(name: "복자 요거트 프라페", price: 5000, count: 1)]
   var orderList = OrderTableViewCell.orders
-  var delegate: OrderTableViewCellDelegate?
+  weak var delegate: OrderTableViewCellDelegate?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -43,6 +44,10 @@ class OrderTableViewCell: UITableViewCell {
   
   @IBAction func minusButtonTapped(_ sender: Any) {
     delegate?.subtractOrderQuantity(for: self)
+  }
+  
+  @IBAction func cancelButtonTapped(_ sender: Any) {
+    delegate?.deleteMenu(for: self)
   }
   
   func setOrderTableViewCell(indexPath: IndexPath) {

@@ -53,6 +53,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ViewController: OrderTableViewCellDelegate {
+  func deleteMenu(for cell: OrderTableViewCell) {
+    guard let indexPath = orderTableView.indexPath(for: cell) else { return }
+    
+    orderList.remove(at: indexPath.row)
+    orderTableView.deleteRows(at: [indexPath], with: .left)
+  }
+  
   
   func subtractOrderQuantity(for cell: OrderTableViewCell) {
     guard let indexPath = orderTableView.indexPath(for: cell) else { return }

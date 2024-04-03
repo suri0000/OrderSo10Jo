@@ -62,6 +62,9 @@
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                             <color key="baseForegroundColor" systemColor="labelColor"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="cancelButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oEg-kd-pGV"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-fb-PQV">
                         <rect key="frame" x="290" y="14.333333333333336" width="16" height="16"/>
