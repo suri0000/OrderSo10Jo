@@ -32,8 +32,8 @@ class TitleView: UIView {
         self.addSubview(segview)
         segview.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            segview.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            segview.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            segview.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            segview.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             segview.heightAnchor.constraint(equalToConstant: 30),
             segview.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
         ])

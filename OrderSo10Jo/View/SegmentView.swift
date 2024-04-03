@@ -38,7 +38,7 @@ class SegmentView: UIView {
             
             // 선택 되어 있지 않을때 폰트 및 폰트컬러
             segment.setTitleTextAttributes([
-                NSAttributedString.Key.foregroundColor: UIColor.gray,
+                NSAttributedString.Key.foregroundColor: UIColor.black,
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
             ], for: .normal)
             
@@ -62,7 +62,7 @@ class SegmentView: UIView {
         }()
     private lazy var underLineDefaultView: UIView = {
             let view = UIView()
-            view.backgroundColor = .gray
+            view.backgroundColor = .systemGray5
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()
@@ -85,7 +85,7 @@ class SegmentView: UIView {
                underLineDefaultView.heightAnchor.constraint(equalToConstant: 1),
                underLineDefaultView.bottomAnchor.constraint(equalTo: segmentControl.bottomAnchor),
                underLineView.bottomAnchor.constraint(equalTo: segmentControl.bottomAnchor),
-               underLineView.heightAnchor.constraint(equalToConstant: 2),
+               underLineView.heightAnchor.constraint(equalToConstant: 1),
                leadingDistance,
                underLineView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments))
            ])
