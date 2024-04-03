@@ -11,10 +11,7 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var orderTableView: UITableView!
   
-  var orderList = OrderTableViewCell.orderList
-
-//  static var orderList = [Order(name: "아메리카노", price: 4500, count: 2),
-//                   Order(name: "카페라떼", price: 5000, count: 1)]
+  var orderList = OrderTableViewCell.orders
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +33,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return orderList.count
   }
@@ -44,11 +42,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = orderTableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderTableViewCell
     
     cell.setOrderTableViewCell(indexPath: indexPath)
-    //cell.menuName?.text = orderList[indexPath.row].name
+    cell.delegate = self
     
     return cell
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    orderTableView.deselectRow(at: indexPath, animated: true)
+  }
+  
+}
+
+extension ViewController: OrderTableViewCellDelegate {
+  
+  func addOrderQuantity(for cell: OrderTableViewCell) {
+    guard let indexPath = orderTableView.indexPath(for: cell) else { return }
+    
+    orderList[indexPath.row].count += 1
+    cell.orderQuantity.text = String(orderList[indexPath.row].count)
+    
+  }
   
 }
 

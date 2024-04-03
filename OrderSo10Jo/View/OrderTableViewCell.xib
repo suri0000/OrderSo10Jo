@@ -76,6 +76,9 @@
                             <color key="baseForegroundColor" systemColor="labelColor"/>
                             <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="plusButtonTapped:" destination="-1" eventType="touchUpInside" id="lYs-2T-BGp"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -94,7 +97,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cancelButton" destination="17T-1t-DXU" id="9dA-iH-ZsQ"/>
                 <outlet property="menuName" destination="0Gm-Lz-XUM" id="ZvR-hj-fSY"/>
+                <outlet property="minusButton" destination="sBW-uN-CLH" id="Uh9-nP-HnO"/>
+                <outlet property="orderQuantity" destination="ZkB-SZ-YL8" id="csq-i8-RNd"/>
+                <outlet property="plusButton" destination="XLd-fb-PQV" id="zAl-LG-GhP"/>
             </connections>
             <point key="canvasLocation" x="-90.839694656488547" y="19.366197183098592"/>
         </tableViewCell>
