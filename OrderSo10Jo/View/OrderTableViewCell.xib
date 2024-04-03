@@ -24,23 +24,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-fb-PQV">
-                        <rect key="frame" x="235" y="14" width="16" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled" title="+" subtitle="" cornerStyle="capsule">
-                            <backgroundConfiguration key="background" strokeWidth="0.5" strokeOutset="0.0">
-                                <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </backgroundConfiguration>
-                            <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="12"/>
-                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBW-uN-CLH">
-                        <rect key="frame" x="158" y="14" width="16" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBW-uN-CLH">
+                        <rect key="frame" x="211" y="14.333333333333336" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="LDj-lQ-zw4"/>
+                            <constraint firstAttribute="height" constant="16" id="y6Y-6R-Xbj"/>
+                        </constraints>
                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" title="-" subtitle="" cornerStyle="capsule">
@@ -52,16 +41,18 @@
                             <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-SZ-YL8">
-                        <rect key="frame" x="194" y="11" width="21" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkB-SZ-YL8">
+                        <rect key="frame" x="248" y="12" width="21" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17T-1t-DXU">
-                        <rect key="frame" x="318" y="5" width="38" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17T-1t-DXU">
+                        <rect key="frame" x="326" y="16.333333333333332" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="0Ia-lS-xH3"/>
+                            <constraint firstAttribute="width" constant="12" id="LNi-l8-82q"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain">
                             <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
@@ -69,17 +60,43 @@
                             <color key="baseForegroundColor" systemColor="labelColor"/>
                         </buttonConfiguration>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-fb-PQV">
+                        <rect key="frame" x="290" y="14.333333333333336" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="LJT-nJ-S39"/>
+                            <constraint firstAttribute="height" constant="16" id="aOU-y0-Ba9"/>
+                        </constraints>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="+" subtitle="" cornerStyle="capsule">
+                            <backgroundConfiguration key="background" strokeWidth="0.5" strokeOutset="0.0">
+                                <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </backgroundConfiguration>
+                            <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="12"/>
+                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0Gm-Lz-XUM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="2Fo-0L-rbh"/>
-                    <constraint firstItem="0Gm-Lz-XUM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="py9-az-Mab"/>
+                    <constraint firstItem="0Gm-Lz-XUM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="0IS-Uk-ZdA"/>
+                    <constraint firstAttribute="trailing" secondItem="17T-1t-DXU" secondAttribute="trailing" constant="55" id="5SZ-Ik-nz4"/>
+                    <constraint firstItem="ZkB-SZ-YL8" firstAttribute="leading" secondItem="sBW-uN-CLH" secondAttribute="trailing" constant="21" id="Dbz-hL-32g"/>
+                    <constraint firstItem="0Gm-Lz-XUM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NHz-OQ-nDh"/>
+                    <constraint firstItem="XLd-fb-PQV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ROy-fu-1gY"/>
+                    <constraint firstItem="XLd-fb-PQV" firstAttribute="leading" secondItem="ZkB-SZ-YL8" secondAttribute="trailing" constant="21" id="Vkx-88-nro"/>
+                    <constraint firstItem="17T-1t-DXU" firstAttribute="leading" secondItem="XLd-fb-PQV" secondAttribute="trailing" constant="20" id="bFz-b6-Dmh"/>
+                    <constraint firstItem="ZkB-SZ-YL8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eEj-Pe-shb"/>
+                    <constraint firstItem="sBW-uN-CLH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="i8Z-gF-5D9"/>
+                    <constraint firstItem="sBW-uN-CLH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Gm-Lz-XUM" secondAttribute="trailing" constant="5" id="pPV-Jq-NAj"/>
+                    <constraint firstItem="17T-1t-DXU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wD8-4v-3td"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="menuName" destination="0Gm-Lz-XUM" id="ZvR-hj-fSY"/>
             </connections>
-            <point key="canvasLocation" x="-90.07633587786259" y="19.718309859154932"/>
+            <point key="canvasLocation" x="-90.839694656488547" y="19.366197183098592"/>
         </tableViewCell>
     </objects>
     <resources>
