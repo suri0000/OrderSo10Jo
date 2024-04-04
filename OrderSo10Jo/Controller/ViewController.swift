@@ -7,16 +7,39 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
+
   
   @IBOutlet weak var orderTableView: UITableView!
   
   var orderList = OrderTableViewCell.orders
   
+    
+    
+    @IBOutlet weak var MenuTableView: UITableView!
+    
+    
+    var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
+                            MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
+                            MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
+                            MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
+                            MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: "디저트")
+    ]
+    let cellSpacingHeight: CGFloat = 1
+    
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setOrderTableView()
+      
+      MenuTableView.delegate = self
+      MenuTableView.dataSource = self
+      
+      //테이블뷰 셀의 identify로 연결
+      MenuTableView.register(UINib(nibName: "MenuSelectTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuSelectTableViewCell")
   }
   
   func setOrderTableView() {
@@ -35,16 +58,39 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return orderList.count
-  }
+      if tableView == self.orderTableView{
+          return orderList.count
+      } else {
+          return data.count
+      }
+      }
   
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+        }
+    
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = orderTableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.cellID, for: indexPath) as! OrderTableViewCell
-    
-    cell.setOrderTableViewCell(indexPath: indexPath)
-    cell.delegate = self
-    
-    return cell
+      
+      if tableView == self.orderTableView{
+          let cell = orderTableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.cellID, for: indexPath) as! OrderTableViewCell
+          
+          cell.setOrderTableViewCell(indexPath: indexPath)
+          cell.delegate = self
+          
+          return cell
+          
+      }else {
+          
+          guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuSelectTableViewCell.identifier, for: indexPath) as? MenuSelectTableViewCell else {return UITableViewCell() }
+          
+          cell.DrinkName.text = data[indexPath.row].name
+          cell.DrinkImage.image = data[indexPath.row].image
+          cell.DrinkCost.text = String(data[indexPath.row].price)
+          
+          
+          return cell
+      }
+  
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -80,5 +126,15 @@ extension ViewController: OrderTableViewCellDelegate {
     cell.minusButton.isEnabled = true
   }
   
+
+
+    
+      
+
+
+
+
 }
+
+
 
