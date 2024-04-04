@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15298BDF2BBE414300B1132B /* PaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15298BDD2BBE414300B1132B /* PaymentView.xib */; };
+		15298BE02BBE414300B1132B /* PaymentStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15298BDE2BBE414300B1132B /* PaymentStackView.xib */; };
 		153DA3832BBA5E22000BF28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DA3822BBA5E22000BF28E /* AppDelegate.swift */; };
 		153DA3852BBA5E22000BF28E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DA3842BBA5E22000BF28E /* SceneDelegate.swift */; };
 		153DA3872BBA5E22000BF28E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DA3862BBA5E22000BF28E /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15298BDD2BBE414300B1132B /* PaymentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentView.xib; sourceTree = "<group>"; };
+		15298BDE2BBE414300B1132B /* PaymentStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentStackView.xib; sourceTree = "<group>"; };
 		153DA37F2BBA5E22000BF28E /* OrderSo10Jo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderSo10Jo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		153DA3822BBA5E22000BF28E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		153DA3842BBA5E22000BF28E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +116,9 @@
 				8519A09F2BBB8D4500D7977A /* TitleView.swift */,
 				8519A0A12BBB8D5A00D7977A /* TitleView.xib */,
 				8519A0A72BBB8DF100D7977A /* PaymentView.swift */,
+				15298BDD2BBE414300B1132B /* PaymentView.xib */,
 				8519A0A92BBB8E5A00D7977A /* PaymentStackView.swift */,
+				15298BDE2BBE414300B1132B /* PaymentStackView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,7 +195,9 @@
 				852482FF2BBAD5A6008E03AE /* OrderTableViewCell.xib in Resources */,
 				153DA3922BBA5E23000BF28E /* LaunchScreen.storyboard in Resources */,
 				153DA38F2BBA5E23000BF28E /* Assets.xcassets in Resources */,
+				15298BE02BBE414300B1132B /* PaymentStackView.xib in Resources */,
 				153DA38A2BBA5E22000BF28E /* Main.storyboard in Resources */,
+				15298BDF2BBE414300B1132B /* PaymentView.xib in Resources */,
 				8519A0A22BBB8D5A00D7977A /* TitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

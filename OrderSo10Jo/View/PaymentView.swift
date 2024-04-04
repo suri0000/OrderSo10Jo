@@ -9,12 +9,13 @@ import UIKit
 
 class PaymentView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+   //@IBOutlet weak var selectedProduct: UILabel! // 선택된 상품 총 개수
+  // @IBOutlet weak var selectedPrice: UILabel! // 선택된 상품의 총 가격
+   
+//   func totalSelectedProduct() -> Int {
+//
+//   }
+//   func totalSelectedPrice() -> Int {
+//
+//   }
 }
