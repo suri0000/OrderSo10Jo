@@ -17,7 +17,7 @@ struct MenuData {
 
 struct Order {
   let name: String
-  let price: Int
-  let count: Int
+  var price: Int
+  var count: Int
 }
 
