@@ -30,7 +30,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O2W-DN-WJX" userLabel="Menu Select Table View">
                                 <rect key="frame" x="0.0" y="194" width="393" height="374"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.80320137739999997" green="0.63089269400000003" blue="0.24692323799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-1M-Eb8" userLabel="Payment Stack View">
                                 <rect key="frame" x="0.0" y="782" width="393" height="70"/>
@@ -67,11 +67,10 @@
                             <constraint firstItem="O2W-DN-WJX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yK3-Ym-SPO"/>
                         </constraints>
                     </view>
-
                     <connections>
+                        <outlet property="MenuTableView" destination="O2W-DN-WJX" id="2ZG-Vk-A84"/>
                         <outlet property="orderTableView" destination="P0L-FQ-eXF" id="67k-6o-OlW"/>
                     </connections>
-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
