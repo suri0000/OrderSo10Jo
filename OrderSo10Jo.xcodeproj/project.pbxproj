@@ -15,8 +15,6 @@
 		153DA3922BBA5E23000BF28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 153DA3902BBA5E23000BF28E /* LaunchScreen.storyboard */; };
 		8519A0A02BBB8D4500D7977A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A09F2BBB8D4500D7977A /* TitleView.swift */; };
 		8519A0A22BBB8D5A00D7977A /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8519A0A12BBB8D5A00D7977A /* TitleView.xib */; };
-		8519A0A42BBB8D9A00D7977A /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A0A32BBB8D9A00D7977A /* MenuTableViewController.swift */; };
-		8519A0A62BBB8DAB00D7977A /* PaymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A0A52BBB8DAB00D7977A /* PaymentTableViewController.swift */; };
 		8519A0A82BBB8DF100D7977A /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A0A72BBB8DF100D7977A /* PaymentView.swift */; };
 		8519A0AA2BBB8E5A00D7977A /* PaymentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A0A92BBB8E5A00D7977A /* PaymentStackView.swift */; };
 		852482FF2BBAD5A6008E03AE /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852482FE2BBAD5A6008E03AE /* OrderTableViewCell.xib */; };
@@ -39,8 +37,6 @@
 		153DA3932BBA5E23000BF28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8519A09F2BBB8D4500D7977A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8519A0A12BBB8D5A00D7977A /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
-		8519A0A32BBB8D9A00D7977A /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		8519A0A52BBB8DAB00D7977A /* PaymentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewController.swift; sourceTree = "<group>"; };
 		8519A0A72BBB8DF100D7977A /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		8519A0A92BBB8E5A00D7977A /* PaymentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStackView.swift; sourceTree = "<group>"; };
 		852482FD2BBAD5A6008E03AE /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				153DA3862BBA5E22000BF28E /* ViewController.swift */,
-				8519A0A32BBB8D9A00D7977A /* MenuTableViewController.swift */,
-				8519A0A52BBB8DAB00D7977A /* PaymentTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,10 +204,11 @@
 				153DA38D2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodeld in Sources */,
 				153DA3872BBA5E22000BF28E /* ViewController.swift in Sources */,
 				852483022BBAD62D008E03AE /* Datas.swift in Sources */,
+
 				A7EF65C22BBCD0C700C2CFA2 /* SegmentView.swift in Sources */,
 				8519A0A62BBB8DAB00D7977A /* PaymentTableViewController.swift in Sources */,
+
 				853CA36D2BBAAC28002FC5FF /* MenuSelectTableViewCell.swift in Sources */,
-				8519A0A42BBB8D9A00D7977A /* MenuTableViewController.swift in Sources */,
 				153DA3832BBA5E22000BF28E /* AppDelegate.swift in Sources */,
 				153DA3852BBA5E22000BF28E /* SceneDelegate.swift in Sources */,
 				8519A0A02BBB8D4500D7977A /* TitleView.swift in Sources */,
