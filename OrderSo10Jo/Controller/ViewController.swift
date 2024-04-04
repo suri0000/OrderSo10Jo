@@ -22,8 +22,10 @@ class ViewController: UIViewController {
     
     
     var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
-                            MenuData(name: "B", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
-                            MenuData(name: "C", price: 6000, image: .init(named: "cafemoca")!, category: "커피")
+                            MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
+                            MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
+                            MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
+                            MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: "디저트")
     ]
     let cellSpacingHeight: CGFloat = 1
     

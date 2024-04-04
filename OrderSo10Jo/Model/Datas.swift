@@ -21,3 +21,8 @@ struct Order {
   var count: Int
 }
 
+enum category: String {
+    case coffee
+    case juice
+}
+
