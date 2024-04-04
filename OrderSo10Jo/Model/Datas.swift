@@ -12,7 +12,7 @@ struct MenuData {
   let name: String
   let price: Int
   let image: UIImage
-  let category: String
+   let category: String
 }
 
 struct Order {
@@ -20,4 +20,3 @@ struct Order {
   var price: Int
   var count: Int
 }
-

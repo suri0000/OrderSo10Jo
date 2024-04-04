@@ -24,8 +24,7 @@
                                     <constraint firstAttribute="height" constant="70" id="tv9-Bg-Zs6"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhB-Np-MJP">
-
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhB-Np-MJP" customClass="TitleView" customModule="OrderSo10Jo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="59" width="393" height="135"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
@@ -40,19 +39,10 @@
                                 <rect key="frame" x="0.0" y="194" width="393" height="374"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-1M-Eb8" userLabel="Payment Stack View">
-                                <rect key="frame" x="0.0" y="782" width="393" height="70"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="4vG-PZ-O49"/>
-                                </constraints>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P0L-FQ-eXF">
                                 <rect key="frame" x="0.0" y="628" width="393" height="154"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,42 +50,26 @@
                             <constraint firstItem="P0L-FQ-eXF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6P5-vA-7zh"/>
                             <constraint firstItem="O2W-DN-WJX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="135" id="7u8-eK-lsJ"/>
                             <constraint firstItem="vhB-Np-MJP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="94Q-Yd-C8e"/>
-
                             <constraint firstAttribute="bottom" secondItem="3tB-Bi-VvJ" secondAttribute="bottom" id="GNG-Sf-xYK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b4i-aJ-Nql" secondAttribute="bottom" constant="44" id="JKg-vh-ljC"/>
-                            <constraint firstItem="b4i-aJ-Nql" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P6e-MK-Qg9"/>
+                            <constraint firstItem="3tB-Bi-VvJ" firstAttribute="top" secondItem="P0L-FQ-eXF" secondAttribute="bottom" id="Pmu-fY-b6L"/>
                             <constraint firstItem="3tB-Bi-VvJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X2t-HH-gok"/>
-
-                            <constraint firstAttribute="bottom" secondItem="Fc3-1M-Eb8" secondAttribute="bottom" id="Byy-Ey-8lk"/>
-                            <constraint firstItem="Fc3-1M-Eb8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QEE-Tk-G7D"/>
-                            <constraint firstItem="Fc3-1M-Eb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tug-yf-zvV"/>
-
                             <constraint firstItem="i1A-6n-nbH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZeT-gr-etc"/>
                             <constraint firstItem="O2W-DN-WJX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bXT-Gd-Lia"/>
                             <constraint firstItem="O2W-DN-WJX" firstAttribute="top" secondItem="vhB-Np-MJP" secondAttribute="bottom" id="cZ4-Kf-lHc"/>
-                            <constraint firstItem="Fc3-1M-Eb8" firstAttribute="top" secondItem="P0L-FQ-eXF" secondAttribute="bottom" id="dzB-0h-oaT"/>
                             <constraint firstItem="vhB-Np-MJP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eKd-TX-bFg"/>
                             <constraint firstItem="vhB-Np-MJP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hBu-1X-Oj8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O2W-DN-WJX" secondAttribute="bottom" constant="250" id="hGh-UY-Y7k"/>
-
                             <constraint firstItem="3tB-Bi-VvJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nyF-Ez-Smt"/>
-
                             <constraint firstItem="P0L-FQ-eXF" firstAttribute="top" secondItem="i1A-6n-nbH" secondAttribute="bottom" constant="10" id="oYv-SD-D7v"/>
-
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i1A-6n-nbH" secondAttribute="trailing" id="oyD-jY-5TH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P0L-FQ-eXF" secondAttribute="trailing" id="wFl-kl-RsM"/>
                             <constraint firstItem="i1A-6n-nbH" firstAttribute="top" secondItem="O2W-DN-WJX" secondAttribute="bottom" id="xiR-Hk-tdd"/>
                             <constraint firstItem="O2W-DN-WJX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yK3-Ym-SPO"/>
                         </constraints>
                     </view>
-
                     <connections>
-
-                        <outlet property="TitleView" destination="vhB-Np-MJP" id="y9x-IV-7GY"/>
-                        <outlet property="paymentStackView" destination="3tB-Bi-VvJ" id="5Wp-F0-eWT"/>
                         <outlet property="orderTableView" destination="P0L-FQ-eXF" id="67k-6o-OlW"/>
                     </connections>
-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,18 +81,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
