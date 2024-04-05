@@ -29,22 +29,16 @@ class PaymentStackView: UIView {
 
    @IBAction func cancelButton(sender: UIButton) {
       
-      guard let presentViewController = findViewController()  else { return }
-      
-      var viewController = ViewController()
-      
-      //let orderTableViewCell = OrderTableViewCell()
-      //OrderTableViewCell 클래스에 정의되었던 orderList[] 에 접근해서 값을 초기화해줘야함
+      guard let presentViewController = findViewController() as? ViewController else { return }
+      // as? 활용해서 다운캐스팅 실행
       
       let alert = UIAlertController(title: "주문 취소하시겠습니까?", message: "리스트가 모두 삭제됩니다.", preferredStyle: .alert)
       
       let confirm = UIAlertAction(title: "확인", style: .default, handler: { _ in OrderTableViewCell.orders.removeAll()
-         if let tableView = viewController.orderTableView {
+         if let tableView = presentViewController.orderTableView {
             tableView.reloadData()
          }
       })
-//      let confirm = UIAlertAction(title: "확인", style: .default, handler: nil )
-      // handler 인자에 확인 버튼 누를 시 구조체 Order를 초기화하는 동작 전달하기
          
       let close = UIAlertAction(title: "닫기", style: .destructive)
       
