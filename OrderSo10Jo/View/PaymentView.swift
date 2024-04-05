@@ -20,6 +20,7 @@ class PaymentView: UIView {
       let identifier = String(describing: PaymentView.self)
       
       guard let view = UINib(nibName: identifier, bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else{ return }
+      //instantiate 부분에서  Thread 1: EXC_BAD_ACCESS (code=2, address=0x16ea87f80) 발생!!!
       
       addSubview(view)
       view.frame = self.bounds
@@ -27,6 +28,9 @@ class PaymentView: UIView {
    
    override init(frame: CGRect) {
       super.init(frame: frame)
+   
+      calSelectedCount()
+      calSelectedPrice()
    }
    
    var ordersList = [Order(name: "아메리카노", price: 4500, count: 2),

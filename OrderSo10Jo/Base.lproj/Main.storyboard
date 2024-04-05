@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="135"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1A-6n-nbH" userLabel="Order Summary View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1A-6n-nbH" userLabel="Order Summary View" customClass="PaymentView" customModule="OrderSo10Jo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="568" width="393" height="50"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
