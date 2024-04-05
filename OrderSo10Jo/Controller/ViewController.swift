@@ -13,14 +13,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var menuTableView: UITableView!
   let segmentControlView = SegmentView()
   
-  var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: .coffee),
-                          MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: .coffee),
-                          MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: .juice),
-                          MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: .juice),
-                          MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: .dessert),
-                          MenuData(name: "마이버디 춘식이 코나 텀블러", price: 30000, image: .init(named: "md")!, category: .merchandise)
-  ]
-  
   var filteredMenuData: [MenuData] = []
   
   override func viewDidLoad() {
@@ -49,7 +41,7 @@ class ViewController: UIViewController {
   }
   
   func filterCategory(category: Categories) -> [MenuData] {
-    filteredMenuData = data.filter { $0.category == category }
+    filteredMenuData = MenuData.data.filter { $0.category == category }
     return filteredMenuData
   }
   
@@ -71,7 +63,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
           return filterCategory(category: .merchandise).count
         default:
-          return data.count
+          return MenuData.data.count
       }
     }
   }
@@ -100,7 +92,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
           categoryData = filterCategory(category: .merchandise)
         default:
-          categoryData = data
+          categoryData = MenuData.data
       }
       
       // 셀 설정
