@@ -29,7 +29,7 @@ class PaymentStackView: UIView {
 
    @IBAction func cancelButton(sender: UIButton) {
       
-      guard let presentViewController = findViewController() else { return }
+      guard let presentViewController = findViewController()  else { return }
       
       var viewController = ViewController()
       
