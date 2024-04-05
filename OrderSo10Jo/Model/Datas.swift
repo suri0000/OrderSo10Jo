@@ -20,3 +20,8 @@ struct Order {
   var price: Int
   var count: Int
 }
+
+enum category: String {
+    case coffee
+    case juice
+}
