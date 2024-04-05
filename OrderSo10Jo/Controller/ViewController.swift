@@ -12,11 +12,12 @@ class ViewController: UIViewController {
   @IBOutlet weak var orderTableView: UITableView!
   @IBOutlet weak var menuTableView: UITableView!
   
-  var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
-                          MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
-                          MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
-                          MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
-                          MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: "디저트")
+  var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: .coffee),
+                          MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: .coffee),
+                          MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: .juice),
+                          MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: .juice),
+                          MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: .dessert),
+                          MenuData(name: "마이버디 춘식이 코나 텀블러", price: 30000, image: .init(named: "md")!, category: .merchandise)
   ]
   
   let cellSpacingHeight: CGFloat = 1
