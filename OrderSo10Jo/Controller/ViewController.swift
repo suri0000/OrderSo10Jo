@@ -11,8 +11,9 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var orderTableView: UITableView!
   @IBOutlet weak var menuTableView: UITableView!
-  
-  var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
+   @IBOutlet weak var paymentView: PaymentView!
+   
+   var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
                           MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
                           MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
                           MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     
     //테이블뷰 셀의 identify로 연결
     menuTableView.register(UINib(nibName: "MenuSelectTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuSelectTableViewCell")
+     
   }
   
   func setOrderTableView() {
@@ -93,6 +95,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       }  else {
         OrderTableViewCell.orders.append(Order(name: selectedMenu.name, price: selectedMenu.price, count: 1))
       }
+       paymentView.calSelectedMenu()
+       
       orderTableView.reloadData()
     }
   }
@@ -106,6 +110,8 @@ extension ViewController: OrderTableViewCellDelegate {
     
     OrderTableViewCell.orders.remove(at: indexPath.row)
     orderTableView.deleteRows(at: [indexPath], with: .left)
+     
+     paymentView.calSelectedMenu()
   }
   
   func subtractOrderQuantity(for cell: OrderTableViewCell) {
@@ -116,14 +122,18 @@ extension ViewController: OrderTableViewCellDelegate {
     if OrderTableViewCell.orders[indexPath.row].count <= 1 {
       cell.minusButton.isEnabled = false
     }
+     
+     paymentView.calSelectedMenu()
   }
   
   func addOrderQuantity(for cell: OrderTableViewCell) {
     guard let indexPath = orderTableView.indexPath(for: cell) else { return }
-    
+   
     OrderTableViewCell.orders[indexPath.row].count += 1
     cell.orderQuantity.text = String(OrderTableViewCell.orders[indexPath.row].count)
     cell.minusButton.isEnabled = true
+     
+     paymentView.calSelectedMenu()
   }
   
 }

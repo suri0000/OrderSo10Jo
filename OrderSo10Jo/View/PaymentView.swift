@@ -16,7 +16,7 @@ class PaymentView: UIView {
       //xib를 사용하기 위해 필수로 사용해야하는 부분
       
       super.init(coder: coder)
-
+      
       let identifier = String(describing: PaymentView.self)
       
       guard let view = UINib(nibName: identifier, bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else{ return }
@@ -24,30 +24,27 @@ class PaymentView: UIView {
       
       view.backgroundColor = .systemGray5
       
-      calSelectedMenu()
-      
       addSubview(view)
       view.frame = self.bounds
+
+      calSelectedMenu()
    }
 
    override init(frame: CGRect) {
       super.init(frame: frame)
-
    }
-   
-   var ordersList = [Order(name: "아메리카노", price: 4500, count: 2),
-                     Order(name: "복자 요가 프라페", price: 5900, count: 1)]
-   // 건응님 데이터 불러오기 한 다음 다시 작업할 것
    
    func calSelectedMenu() {
       var sumCount : Int = 0
       var sumPrice : Int = 0
       
-      for i in ordersList {
+      //print(OrderTableViewCell.orders)
+      
+      for i in OrderTableViewCell.orders {
          sumCount += i.count
-         sumPrice += i.price
+         sumPrice += i.price * i.count
          
-         print(i.count, i.price)
+         //print(i.count, i.price)
       }
       totalSelectedCount.text = String(sumCount) + "개"
       totalSelectedPrice.text = String(sumPrice) + "원"

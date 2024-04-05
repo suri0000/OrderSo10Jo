@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1j-Ls-Zof">
-                    <rect key="frame" x="187.33333333333334" y="15" width="67" height="20"/>
+                    <rect key="frame" x="188" y="15" width="67" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="67" id="Dc8-Lh-mJ7"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fae-7N-u2Z">
-                    <rect key="frame" x="262.33333333333331" y="11" width="100" height="28"/>
+                    <rect key="frame" x="263" y="11" width="100" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1PV-SX-mih"/>
                         <constraint firstAttribute="width" constant="100" id="Phe-90-F6I"/>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="총 주문 내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g0-Wf-1iI">
-                    <rect key="frame" x="36.999999999999993" y="16" width="82.333333333333314" height="21"/>
+                    <rect key="frame" x="20" y="16" width="100" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="QQ8-rD-yMl"/>
                     </constraints>
