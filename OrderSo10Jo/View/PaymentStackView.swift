@@ -29,20 +29,21 @@ class PaymentStackView: UIView {
 
    @IBAction func cancelButton(sender: UIButton) {
       
-      //let storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
-      //스토리보드 가져오기
+      guard let presentViewController = findViewController() else { return }
       
-      //guard let viewController = storyboard?.instantiateViewController(withIdentifier: "Main") else { return }
-      // MainView와 연결하기
+      var viewController = ViewController()
       
-      guard let viewController = findViewController() else { return }
-      
-      let orderTableViewCell = OrderTableViewCell()
+      //let orderTableViewCell = OrderTableViewCell()
       //OrderTableViewCell 클래스에 정의되었던 orderList[] 에 접근해서 값을 초기화해줘야함
       
       let alert = UIAlertController(title: "주문 취소하시겠습니까?", message: "리스트가 모두 삭제됩니다.", preferredStyle: .alert)
       
-      let confirm = UIAlertAction(title: "확인", style: .default, handler: { _ in orderTableViewCell.orderList.removeAll() } )
+      let confirm = UIAlertAction(title: "확인", style: .default, handler: { _ in OrderTableViewCell.orders.removeAll()
+         if let tableView = viewController.orderTableView {
+            tableView.reloadData()
+         }
+      })
+//      let confirm = UIAlertAction(title: "확인", style: .default, handler: nil )
       // handler 인자에 확인 버튼 누를 시 구조체 Order를 초기화하는 동작 전달하기
          
       let close = UIAlertAction(title: "닫기", style: .destructive)
@@ -50,16 +51,10 @@ class PaymentStackView: UIView {
       alert.addAction(confirm)
       alert.addAction(close)
       
-      viewController.present(alert, animated: true)
+      presentViewController.present(alert, animated: true)
    }
    
    @IBAction func payButton(sender: UIButton) {
-      
-      //let storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
-      //스토리보드 가져오기
-      
-      //guard let viewController = storyboard?.instantiateViewController(withIdentifier: "Main") else { return }
-      // MainView와 연결하기
       
       guard let viewController = findViewController() else { return }
       

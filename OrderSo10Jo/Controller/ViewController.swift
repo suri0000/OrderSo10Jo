@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var orderTableView: UITableView!
+  @IBOutlet public weak var orderTableView: UITableView!
   
   var orderList = OrderTableViewCell.orders
   

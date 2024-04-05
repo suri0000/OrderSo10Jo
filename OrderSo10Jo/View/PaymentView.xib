@@ -57,7 +57,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="k9N-ao-vS1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="M5b-88-evE"/>
+                <constraint firstItem="k9N-ao-vS1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V8V-cp-FeU"/>
                 <constraint firstItem="k9N-ao-vS1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="531" id="XnY-1r-DTx"/>
             </constraints>
             <connections>
