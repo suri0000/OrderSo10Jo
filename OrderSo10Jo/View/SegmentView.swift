@@ -53,7 +53,7 @@ class SegmentView: UIView {
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold)
             ], for: .selected)
             
-            segment.addTarget(SegmentView.self, action: #selector(changeUnderLinePosition), for: .valueChanged)
+            segment.addTarget(self, action: #selector(changeUnderLinePosition), for: .valueChanged)
             
             segment.translatesAutoresizingMaskIntoConstraints = false
             return segment

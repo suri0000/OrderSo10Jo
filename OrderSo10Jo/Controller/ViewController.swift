@@ -25,9 +25,9 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-   
+    
     setOrderTableView()
-
+    
     menuTableView.delegate = self
     menuTableView.dataSource = self
     
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     filteredMenuData = data.filter { $0.category == category }
     return filteredMenuData
   }
-
+  
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -89,39 +89,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     } else {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuSelectTableViewCell.identifier, for: indexPath) as? MenuSelectTableViewCell else { return UITableViewCell() }
       
+      let categoryData: [MenuData]
       switch SegmentView.segmentControl.selectedSegmentIndex {
         case 0:
-          cell.drinkName.text = filterCategory(category: .coffee)[indexPath.row].name
-          cell.drinkImage.image = filterCategory(category: .coffee)[indexPath.row].image
-          cell.drinkCost.text = String(filterCategory(category: .coffee)[indexPath.row].price)
-          
-          return cell
+          categoryData = filterCategory(category: .coffee)
         case 1:
-          cell.drinkName.text = filterCategory(category: .juice)[indexPath.row].name
-          cell.drinkImage.image = filterCategory(category: .juice)[indexPath.row].image
-          cell.drinkCost.text = String(filterCategory(category: .juice)[indexPath.row].price)
-          
-          return cell
+          categoryData = filterCategory(category: .juice)
         case 2:
-          cell.drinkName.text = filterCategory(category: .dessert)[indexPath.row].name
-          cell.drinkImage.image = filterCategory(category: .dessert)[indexPath.row].image
-          cell.drinkCost.text = String(filterCategory(category: .dessert)[indexPath.row].price)
-          
-          return cell
+          categoryData = filterCategory(category: .dessert)
         case 3:
-          cell.drinkName.text = filterCategory(category: .merchandise)[indexPath.row].name
-          cell.drinkImage.image = filterCategory(category: .merchandise)[indexPath.row].image
-          cell.drinkCost.text = String(filterCategory(category: .merchandise)[indexPath.row].price)
-          
-          return cell
+          categoryData = filterCategory(category: .merchandise)
         default:
-          cell.drinkName.text = data[indexPath.row].name
-          cell.drinkImage.image = data[indexPath.row].image
-          cell.drinkCost.text = String(data[indexPath.row].price)
-          
-          return cell
+          categoryData = data
       }
       
+      // 셀 설정
+      let menuItem = categoryData[indexPath.row]
+      cell.drinkName.text = menuItem.name
+      cell.drinkImage.image = menuItem.image
+      cell.drinkCost.text = String(menuItem.price)
+      
+      return cell
     }
   }
   
@@ -131,11 +119,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     } else {
       menuTableView.deselectRow(at: indexPath, animated: true)
       
-      let selectedMenu = data[indexPath.row]
+      let selectedCategory: Categories
+      switch SegmentView.segmentControl.selectedSegmentIndex {
+        case 0:
+          selectedCategory = .coffee
+        case 1:
+          selectedCategory = .juice
+        case 2:
+          selectedCategory = .dessert
+        case 3:
+          selectedCategory = .merchandise
+        default:
+          selectedCategory = .coffee
+      }
       
+      let categoryData = filterCategory(category: selectedCategory)
+      let selectedMenu = categoryData[indexPath.row]
       if let existingOrderIndex = OrderTableViewCell.orders.firstIndex(where: { $0.name == selectedMenu.name }) {
         OrderTableViewCell.orders[existingOrderIndex].count += 1
-      }  else {
+      } else {
         OrderTableViewCell.orders.append(Order(name: selectedMenu.name, price: selectedMenu.price, count: 1))
       }
       orderTableView.reloadData()
