@@ -44,7 +44,6 @@ class OrderTableViewCell: UITableViewCell {
   
   @IBAction func plusButtonTapped(_ sender: Any) {
     delegate?.addOrderQuantity(for: self)
-     
   }
   
   @IBAction func minusButtonTapped(_ sender: Any) {

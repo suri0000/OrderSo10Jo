@@ -38,6 +38,9 @@ class PaymentStackView: UIView {
          if let tableView = presentViewController.orderTableView {
             tableView.reloadData()
          }
+         if let paymentView = presentViewController.paymentView {
+            paymentView.calSelectedMenu()
+         }
       })
          
       let close = UIAlertAction(title: "닫기", style: .destructive)
