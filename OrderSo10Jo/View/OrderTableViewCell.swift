@@ -24,6 +24,7 @@ class OrderTableViewCell: UITableViewCell {
   static let cellID = "OrderCell"
   static var orders = [Order(name: "아이스 아메리카노", price: 4700, count: 2),
                        Order(name: "카페 모카", price: 6200, count: 1)]
+
   weak var delegate: OrderTableViewCellDelegate?
   
   override func prepareForReuse() {       // 셀을 초기화 해주는 코드
@@ -43,6 +44,7 @@ class OrderTableViewCell: UITableViewCell {
   
   @IBAction func plusButtonTapped(_ sender: Any) {
     delegate?.addOrderQuantity(for: self)
+     
   }
   
   @IBAction func minusButtonTapped(_ sender: Any) {
