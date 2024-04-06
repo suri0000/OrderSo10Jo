@@ -7,27 +7,19 @@
 
 import UIKit
 
-protocol SegmentViewDelegate: AnyObject {
-  func segmentView(_ segmentView: SegmentView, didSelectSegmentAt index: Int)
-}
-
 class SegmentView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
-        
-    }
-    
+   override init(frame: CGRect) {
+      super.init(frame: frame)
+      configure()
+   }
+   
     required init?(coder: NSCoder) {
         fatalError("init?(coder:) is not supported")
     }
     
-    static weak var delegate: SegmentViewDelegate?
-    
     var onSelected: ((Int) -> Void)?
     
     //MARK: segmentControl
-    
     public lazy var segmentControl: UISegmentedControl = {
         
         let segment = UISegmentedControl()
@@ -58,7 +50,6 @@ class SegmentView: UIView {
         ], for: .selected)
         
         segment.addTarget(self, action: #selector(changeUnderLinePosition), for: .valueChanged)
-        
         segment.translatesAutoresizingMaskIntoConstraints = false
         return segment
     }()
@@ -86,10 +77,12 @@ class SegmentView: UIView {
         addSubview(underLineDefaultView)
         addSubview(underLineView)
         NSLayoutConstraint.activate([
+
             segmentControl.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             segmentControl.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             segmentControl.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -10),
             segmentControl.heightAnchor.constraint(equalToConstant: 35),
+
             underLineDefaultView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             underLineDefaultView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             underLineDefaultView.heightAnchor.constraint(equalToConstant: 1),
@@ -113,7 +106,6 @@ class SegmentView: UIView {
         )
         onSelected?(segmentControl.selectedSegmentIndex)
     }
-    
 }
 
      

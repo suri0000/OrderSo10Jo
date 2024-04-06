@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15298BDF2BBE414300B1132B /* PaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15298BDD2BBE414300B1132B /* PaymentView.xib */; };
 		153DA3832BBA5E22000BF28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DA3822BBA5E22000BF28E /* AppDelegate.swift */; };
 		153DA3852BBA5E22000BF28E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DA3842BBA5E22000BF28E /* SceneDelegate.swift */; };
 		153DA3872BBA5E22000BF28E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DA3862BBA5E22000BF28E /* ViewController.swift */; };
 		153DA38A2BBA5E22000BF28E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 153DA3882BBA5E22000BF28E /* Main.storyboard */; };
-		153DA38D2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 153DA38B2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodeld */; };
 		153DA3922BBA5E23000BF28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 153DA3902BBA5E23000BF28E /* LaunchScreen.storyboard */; };
+		1563EB3C2BBEBE3C00E6FFFF /* PaymentStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1563EB3A2BBEBE3C00E6FFFF /* PaymentStackView.xib */; };
+		1563EB3D2BBEBE3C00E6FFFF /* PaymentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563EB3B2BBEBE3C00E6FFFF /* PaymentStackView.swift */; };
 		8519A0A02BBB8D4500D7977A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A09F2BBB8D4500D7977A /* TitleView.swift */; };
 		8519A0A22BBB8D5A00D7977A /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8519A0A12BBB8D5A00D7977A /* TitleView.xib */; };
 		8519A0A82BBB8DF100D7977A /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A0A72BBB8DF100D7977A /* PaymentView.swift */; };
-		8519A0AA2BBB8E5A00D7977A /* PaymentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519A0A92BBB8E5A00D7977A /* PaymentStackView.swift */; };
 		852482FF2BBAD5A6008E03AE /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852482FE2BBAD5A6008E03AE /* OrderTableViewCell.xib */; };
 		852483002BBAD5A6008E03AE /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852482FD2BBAD5A6008E03AE /* OrderTableViewCell.swift */; };
 		852483022BBAD62D008E03AE /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852483012BBAD62D008E03AE /* Datas.swift */; };
@@ -27,18 +28,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		153DA37F2BBA5E22000BF28E /* OrderSo10Jo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderSo10Jo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15298BDD2BBE414300B1132B /* PaymentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentView.xib; sourceTree = "<group>"; };
+		153DA37F2BBA5E22000BF28E /* OrderSo10Jo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = OrderSo10Jo.app; path = "/Users/rlarhkdals/Desktop/TomorrowStudy Example/OrderSo10Jo/build/Debug-iphoneos/OrderSo10Jo.app"; sourceTree = "<absolute>"; };
 		153DA3822BBA5E22000BF28E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		153DA3842BBA5E22000BF28E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		153DA3862BBA5E22000BF28E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		153DA3892BBA5E22000BF28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		153DA38C2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderSo10Jo.xcdatamodel; sourceTree = "<group>"; };
 		153DA3912BBA5E23000BF28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		153DA3932BBA5E23000BF28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1563EB3A2BBEBE3C00E6FFFF /* PaymentStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentStackView.xib; sourceTree = "<group>"; };
+		1563EB3B2BBEBE3C00E6FFFF /* PaymentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentStackView.swift; sourceTree = "<group>"; };
 		8519A09F2BBB8D4500D7977A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8519A0A12BBB8D5A00D7977A /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		8519A0A72BBB8DF100D7977A /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
-		8519A0A92BBB8E5A00D7977A /* PaymentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStackView.swift; sourceTree = "<group>"; };
 		852482FD2BBAD5A6008E03AE /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		852482FE2BBAD5A6008E03AE /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		852483012BBAD62D008E03AE /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
@@ -63,16 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				153DA3812BBA5E22000BF28E /* OrderSo10Jo */,
-				153DA3802BBA5E22000BF28E /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		153DA3802BBA5E22000BF28E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				153DA37F2BBA5E22000BF28E /* OrderSo10Jo.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		153DA3812BBA5E22000BF28E /* OrderSo10Jo */ = {
@@ -86,7 +79,6 @@
 				153DA3882BBA5E22000BF28E /* Main.storyboard */,
 				153DA3902BBA5E23000BF28E /* LaunchScreen.storyboard */,
 				153DA3932BBA5E23000BF28E /* Info.plist */,
-				153DA38B2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodeld */,
 				A72A2DE82BBE2D57001CA606 /* Assets.xcassets */,
 			);
 			path = OrderSo10Jo;
@@ -110,7 +102,9 @@
 				8519A09F2BBB8D4500D7977A /* TitleView.swift */,
 				8519A0A12BBB8D5A00D7977A /* TitleView.xib */,
 				8519A0A72BBB8DF100D7977A /* PaymentView.swift */,
-				8519A0A92BBB8E5A00D7977A /* PaymentStackView.swift */,
+				15298BDD2BBE414300B1132B /* PaymentView.xib */,
+				1563EB3B2BBEBE3C00E6FFFF /* PaymentStackView.swift */,
+				1563EB3A2BBEBE3C00E6FFFF /* PaymentStackView.xib */,
 				A7EF65C12BBCD0C700C2CFA2 /* SegmentView.swift */,
 			);
 			path = View;
@@ -168,7 +162,7 @@
 				Base,
 			);
 			mainGroup = 153DA3762BBA5E22000BF28E;
-			productRefGroup = 153DA3802BBA5E22000BF28E /* Products */;
+			productRefGroup = 153DA3762BBA5E22000BF28E;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -186,8 +180,11 @@
 				852482FF2BBAD5A6008E03AE /* OrderTableViewCell.xib in Resources */,
 				153DA3922BBA5E23000BF28E /* LaunchScreen.storyboard in Resources */,
 				153DA38A2BBA5E22000BF28E /* Main.storyboard in Resources */,
+				15298BDF2BBE414300B1132B /* PaymentView.xib in Resources */,
+				153DA38A2BBA5E22000BF28E /* Main.storyboard in Resources */,
 				A72A2DE92BBE2D57001CA606 /* Assets.xcassets in Resources */,
 				8519A0A22BBB8D5A00D7977A /* TitleView.xib in Resources */,
+				1563EB3C2BBEBE3C00E6FFFF /* PaymentStackView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,16 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8519A0AA2BBB8E5A00D7977A /* PaymentStackView.swift in Sources */,
+				1563EB3D2BBEBE3C00E6FFFF /* PaymentStackView.swift in Sources */,
 				852483002BBAD5A6008E03AE /* OrderTableViewCell.swift in Sources */,
 				8519A0A82BBB8DF100D7977A /* PaymentView.swift in Sources */,
-				153DA38D2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodeld in Sources */,
 				153DA3872BBA5E22000BF28E /* ViewController.swift in Sources */,
 				852483022BBAD62D008E03AE /* Datas.swift in Sources */,
-
 				A7EF65C22BBCD0C700C2CFA2 /* SegmentView.swift in Sources */,
-				8519A0A62BBB8DAB00D7977A /* PaymentTableViewController.swift in Sources */,
-
 				853CA36D2BBAAC28002FC5FF /* MenuSelectTableViewCell.swift in Sources */,
 				153DA3832BBA5E22000BF28E /* AppDelegate.swift in Sources */,
 				153DA3852BBA5E22000BF28E /* SceneDelegate.swift in Sources */,
@@ -427,19 +420,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		153DA38B2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				153DA38C2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodel */,
-			);
-			currentVersion = 153DA38C2BBA5E22000BF28E /* OrderSo10Jo.xcdatamodel */;
-			path = OrderSo10Jo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 153DA3772BBA5E22000BF28E /* Project object */;
 }
