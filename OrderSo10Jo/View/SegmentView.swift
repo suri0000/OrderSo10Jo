@@ -21,7 +21,7 @@ class SegmentView: UIView {
     var onSelected: ((Int) -> Void)?
     
     //MARK: segmentControl
-    private lazy var segmentControl: UISegmentedControl = {
+    public lazy var segmentControl: UISegmentedControl = {
             let segment = UISegmentedControl()
             
             
