@@ -70,6 +70,7 @@
                     <connections>
                         <outlet property="menuTableView" destination="O2W-DN-WJX" id="2ZG-Vk-A84"/>
                         <outlet property="orderTableView" destination="P0L-FQ-eXF" id="67k-6o-OlW"/>
+                        <outlet property="titleView" destination="vhB-Np-MJP" id="xmz-eI-iF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
