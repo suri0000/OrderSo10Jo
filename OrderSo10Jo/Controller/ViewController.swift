@@ -7,17 +7,24 @@
 
 import UIKit
 
+enum MenuCategory: Int {
+    case coffee
+    case juice
+    case desert
+    case other
+}
+
 class ViewController: UIViewController {
-  
-  @IBOutlet weak var orderTableView: UITableView!
-  @IBOutlet weak var menuTableView: UITableView!
-  
-  var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
-                          MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
-                          MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
-                          MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
-                          MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: "디저트")
-  ]
+    
+    @IBOutlet weak var orderTableView: UITableView!
+    @IBOutlet weak var menuTableView: UITableView!
+    
+    @IBOutlet weak var titleView: TitleView!
+    var data: [MenuData] = []{
+    didSet {
+        menuTableView.reloadData()
+    }
+}
   
   let cellSpacingHeight: CGFloat = 1
   
@@ -31,6 +38,7 @@ class ViewController: UIViewController {
     
     //테이블뷰 셀의 identify로 연결
     menuTableView.register(UINib(nibName: "MenuSelectTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuSelectTableViewCell")
+      configureCategorySelectionAction()
   }
   
   func setOrderTableView() {
@@ -42,6 +50,46 @@ class ViewController: UIViewController {
     
     view.addSubview(orderTableView)
   }
+    
+    
+    private func configureCategorySelectionAction() {
+        titleView.segview.onSelected = { [weak self] selectedIndex in
+            guard
+                let self,
+                let category = MenuCategory(rawValue: selectedIndex)
+            else { return }
+            
+            switch category {
+            case .coffee:
+                // 커피
+                data = [
+                    MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
+                    MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
+                ]
+                
+            case .juice:
+                // 음료
+                data = [
+                    MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
+                    MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
+                ]
+                
+            case .desert:
+                // 디저트
+                data = [
+                    MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: "디저트")
+                ]
+                
+            case .other:
+                // 상품
+                data = [
+                    MenuData(name: "상품2323", price: 4000, image: .init(named: "cafemoca")!, category: "상품")
+                ]
+            }
+        }
+    }
+    
+    
   
 }
 

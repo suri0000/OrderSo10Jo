@@ -18,6 +18,8 @@ class SegmentView: UIView {
             fatalError("init?(coder:) is not supported")
         }
     
+    var onSelected: ((Int) -> Void)?
+    
     //MARK: segmentControl
     private lazy var segmentControl: UISegmentedControl = {
             let segment = UISegmentedControl()
@@ -98,7 +100,9 @@ class SegmentView: UIView {
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
                 self?.leadingDistance.constant = leadingDistance
                 self?.layoutIfNeeded()
-            })
+            }
+            )
+        onSelected?(segmentControl.selectedSegmentIndex)
         }
     
 }
