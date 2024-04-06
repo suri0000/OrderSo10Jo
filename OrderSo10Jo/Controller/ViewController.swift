@@ -11,15 +11,9 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var orderTableView: UITableView!
   @IBOutlet weak var menuTableView: UITableView!
+  let segmentControlView = SegmentView()
   
-  var data: [MenuData] = [MenuData(name: "A", price: 6000, image: .init(named: "cafemoca")!, category: "커피"),
-                          MenuData(name: "B", price: 5500, image: .init(named: "cafemoca")!, category: "커피"),
-                          MenuData(name: "C", price: 5000, image: .init(named: "cafemoca")!, category: "음료"),
-                          MenuData(name: "D", price: 4500, image: .init(named: "cafemoca")!, category: "음료"),
-                          MenuData(name: "E", price: 4000, image: .init(named: "cafemoca")!, category: "디저트")
-  ]
-  
-  let cellSpacingHeight: CGFloat = 1
+  var filteredMenuData: [MenuData] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,6 +25,9 @@ class ViewController: UIViewController {
     
     //테이블뷰 셀의 identify로 연결
     menuTableView.register(UINib(nibName: "MenuSelectTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuSelectTableViewCell")
+    
+    SegmentView.delegate = self
+    view.addSubview(segmentControlView)
   }
   
   func setOrderTableView() {
@@ -43,6 +40,11 @@ class ViewController: UIViewController {
     view.addSubview(orderTableView)
   }
   
+  func filterCategory(category: Categories) -> [MenuData] {
+    filteredMenuData = MenuData.data.filter { $0.category == category }
+    return filteredMenuData
+  }
+  
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,12 +53,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     if tableView == self.orderTableView {
       return OrderTableViewCell.orders.count
     } else {
-      return data.count
+      switch SegmentView.segmentControl.selectedSegmentIndex {
+        case 0:
+          return filterCategory(category: .coffee).count
+        case 1:
+          return filterCategory(category: .juice).count
+        case 2:
+          return filterCategory(category: .dessert).count
+        case 3:
+          return filterCategory(category: .merchandise).count
+        default:
+          return MenuData.data.count
+      }
     }
-  }
-  
-  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return cellSpacingHeight
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,9 +81,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     } else {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuSelectTableViewCell.identifier, for: indexPath) as? MenuSelectTableViewCell else { return UITableViewCell() }
       
-      cell.drinkName.text = data[indexPath.row].name
-      cell.drinkImage.image = data[indexPath.row].image
-      cell.drinkCost.text = String(data[indexPath.row].price)
+      let categoryData: [MenuData]
+      switch SegmentView.segmentControl.selectedSegmentIndex {
+        case 0:
+          categoryData = filterCategory(category: .coffee)
+        case 1:
+          categoryData = filterCategory(category: .juice)
+        case 2:
+          categoryData = filterCategory(category: .dessert)
+        case 3:
+          categoryData = filterCategory(category: .merchandise)
+        default:
+          categoryData = MenuData.data
+      }
+      
+      // 셀 설정
+      let menuItem = categoryData[indexPath.row]
+      cell.drinkName.text = menuItem.name
+      cell.drinkImage.image = menuItem.image
+      cell.drinkCost.text = String(menuItem.price)
       
       return cell
     }
@@ -86,11 +111,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     } else {
       menuTableView.deselectRow(at: indexPath, animated: true)
       
-      let selectedMenu = data[indexPath.row]
+      let selectedCategory: Categories
+      switch SegmentView.segmentControl.selectedSegmentIndex {
+        case 0:
+          selectedCategory = .coffee
+        case 1:
+          selectedCategory = .juice
+        case 2:
+          selectedCategory = .dessert
+        case 3:
+          selectedCategory = .merchandise
+        default:
+          selectedCategory = .coffee
+      }
       
+      let categoryData = filterCategory(category: selectedCategory)
+      let selectedMenu = categoryData[indexPath.row]
       if let existingOrderIndex = OrderTableViewCell.orders.firstIndex(where: { $0.name == selectedMenu.name }) {
         OrderTableViewCell.orders[existingOrderIndex].count += 1
-      }  else {
+      } else {
         OrderTableViewCell.orders.append(Order(name: selectedMenu.name, price: selectedMenu.price, count: 1))
       }
       orderTableView.reloadData()
@@ -126,4 +165,10 @@ extension ViewController: OrderTableViewCellDelegate {
     cell.minusButton.isEnabled = true
   }
   
+}
+
+extension ViewController: SegmentViewDelegate {
+  func segmentView(_ segmentView: SegmentView, didSelectSegmentAt index: Int) {
+    menuTableView.reloadData()
+  }
 }
