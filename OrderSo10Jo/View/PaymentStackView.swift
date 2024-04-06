@@ -26,7 +26,6 @@ class PaymentStackView: UIView {
       super.init(frame: frame)
    }
    
-
    @IBAction func cancelButton(sender: UIButton) {
       
       guard let presentViewController = findViewController() as? ViewController else { return }
