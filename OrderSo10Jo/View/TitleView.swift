@@ -22,7 +22,6 @@ class TitleView: UIView {
         //코드로 할때
         }
     
-    
     private func initialize() {
         let identifier = String(describing: TitleView.self)
         let segview = SegmentView()

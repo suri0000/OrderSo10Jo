@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol SegmentViewDelegate: AnyObject {
-  func segmentView(_ segmentView: SegmentView, didSelectSegmentAt index: Int)
-}
-
 class SegmentView: UIView {
     override init(frame: CGRect) {
             super.init(frame: frame)
@@ -21,11 +17,9 @@ class SegmentView: UIView {
         required init?(coder: NSCoder) {
             fatalError("init?(coder:) is not supported")
         }
-  
-    static weak var delegate: SegmentViewDelegate?
     
     //MARK: segmentControl
-    static var segmentControl: UISegmentedControl = {
+   var segmentControl: UISegmentedControl = {
             let segment = UISegmentedControl()
             
             segment.selectedSegmentTintColor = .clear
@@ -74,41 +68,36 @@ class SegmentView: UIView {
         }()
     
     private lazy var leadingDistance: NSLayoutConstraint = {
-      return underLineView.leadingAnchor.constraint(equalTo: SegmentView.segmentControl.leadingAnchor)
+      return underLineView.leadingAnchor.constraint(equalTo: segmentControl.leadingAnchor)
         }()
     
     func configure() {
-      addSubview(SegmentView.segmentControl)
+      addSubview(segmentControl)
            addSubview(underLineDefaultView)
            addSubview(underLineView)
            NSLayoutConstraint.activate([
-            SegmentView.segmentControl.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            SegmentView.segmentControl.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            SegmentView.segmentControl.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -10),
-            SegmentView.segmentControl.heightAnchor.constraint(equalToConstant: 35),
+            segmentControl.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            segmentControl.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            segmentControl.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -10),
+            segmentControl.heightAnchor.constraint(equalToConstant: 35),
                underLineDefaultView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                underLineDefaultView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
                underLineDefaultView.heightAnchor.constraint(equalToConstant: 1),
-            underLineDefaultView.bottomAnchor.constraint(equalTo: SegmentView.segmentControl.bottomAnchor),
-            underLineView.bottomAnchor.constraint(equalTo: SegmentView.segmentControl.bottomAnchor),
+            underLineDefaultView.bottomAnchor.constraint(equalTo: segmentControl.bottomAnchor),
+            underLineView.bottomAnchor.constraint(equalTo: segmentControl.bottomAnchor),
                underLineView.heightAnchor.constraint(equalToConstant: 1),
                leadingDistance,
-            underLineView.widthAnchor.constraint(equalTo: SegmentView.segmentControl.widthAnchor, multiplier: 1 / CGFloat(SegmentView.segmentControl.numberOfSegments))
+            underLineView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments))
            ])
        }
     
     @objc public func changeUnderLinePosition(_ sender: UISegmentedControl) {
-      let segmentIndex = CGFloat(SegmentView.segmentControl.selectedSegmentIndex)
-      let segmentWidth = SegmentView.segmentControl.frame.width / CGFloat(SegmentView.segmentControl.numberOfSegments)
+      let segmentIndex = CGFloat(segmentControl.selectedSegmentIndex)
+      let segmentWidth = segmentControl.frame.width / CGFloat(segmentControl.numberOfSegments)
             let leadingDistance = segmentWidth * segmentIndex
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
                 self?.leadingDistance.constant = leadingDistance
                 self?.layoutIfNeeded()
             })
-
-      if let delegate = SegmentView.delegate {
-              delegate.segmentView(self, didSelectSegmentAt: sender.selectedSegmentIndex)
-      }
     }
-    
 }
