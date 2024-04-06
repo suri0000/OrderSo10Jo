@@ -14,8 +14,13 @@
             filePath = "OrderSo10Jo/View/PaymentStackView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "63"
             endingLineNumber = "63"
+=======
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+>>>>>>> develop
             landmarkName = "payButton(sender:)"
             landmarkType = "7">
          </BreakpointContent>

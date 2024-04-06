@@ -11,6 +11,7 @@ class TitleView: UIView {
 
     @IBOutlet var titleLbl: UILabel!
     @IBOutlet var searchButton: UIButton!
+    lazy var segview = SegmentView()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -24,7 +25,7 @@ class TitleView: UIView {
     
     private func initialize() {
         let identifier = String(describing: TitleView.self)
-        let segview = SegmentView()
+        
         //xib시 필수!!
         guard let view = UINib(nibName: identifier, bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else{return}
         addSubview(view)
