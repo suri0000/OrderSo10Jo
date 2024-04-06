@@ -13,16 +13,15 @@ struct MenuData {
   let price: Int
   let image: UIImage
   let category: String
+  
+  
 }
 
 struct Order {
   let name: String
   var price: Int
   var count: Int
+  
 }
 
-enum category: String {
-    case coffee
-    case juice
-}
 

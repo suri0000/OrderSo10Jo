@@ -13,12 +13,8 @@ class MenuSelectTableViewCell: UITableViewCell {
     static let identifier = "MenuSelectTableViewCell"
     
     @IBOutlet weak var drinkImage: UIImageView!
-    
     @IBOutlet weak var drinkName: UILabel!
-    
     @IBOutlet weak var drinkCost: UILabel!
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,5 +26,9 @@ class MenuSelectTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
+//  override func prepareForReuse() {
+//      super.prepareForReuse()
+//  }
     
 }
